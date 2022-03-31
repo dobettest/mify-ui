@@ -4,7 +4,7 @@ export interface BaseButtonProps {
     /**设置按钮大小 */
     size?: 'large' | 'middle' | 'small',
     /**设置按钮类型 */
-    type?: 'primary' | 'default' | 'danger' | 'link',
+    btnType?: 'primary' | 'default' | 'danger' | 'link',
     /**按钮失效状态 */
     disabled?: boolean,
     /**按钮额外样式 */
@@ -16,14 +16,14 @@ export interface BaseButtonProps {
 type NativeButtonProps = BaseButtonProps & ButtonHTMLAttributes<HTMLButtonElement>
 type AnchorButtonProps = BaseButtonProps & LinkHTMLAttributes<HTMLAnchorElement>
 export type ButtonProps = Partial<NativeButtonProps & AnchorButtonProps>
-const Button: FC<BaseButtonProps> = props => {
-    const { size, type, disabled, className, children, href, ...resetProps } = props;
+const Button: FC<ButtonProps> = props => {
+    const { size, btnType, disabled, className, children, href, ...resetProps } = props;
     let classNames = classnames('button', className, {
-        [`btn-${type}`]: type,
+        [`btn-${btnType}`]: btnType,
         [`btn-${size}`]: size,
-        disabled: (type === 'link') && disabled
+        disabled: (btnType === 'link') && disabled
     })
-    if (type === 'link' && href) {
+    if (btnType === 'link' && href) {
         return <a href={href} {...resetProps} className={classNames}>
             {children}
         </a>
@@ -35,7 +35,7 @@ const Button: FC<BaseButtonProps> = props => {
 }
 Button.defaultProps = {
     disabled: false,
-    type: 'default',
-    size: 'middle'
+    size: 'middle',
+    btnType:'default'
 }
 export default Button;
