@@ -1,10 +1,11 @@
 ---
 nav:
-  title: Components
+  title: 组件
   path: /components
-  order: 0
+  order: 1
 group:
   path: /layout
   title: 布局
+title: Col
 ---
-## Layout布局
+# 列
