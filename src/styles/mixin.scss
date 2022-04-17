@@ -1,0 +1,23 @@
+@mixin b($block){
+   .#{$block}{
+       @content;
+   }
+}
+@mixin e($element) {
+    .#{$element}{
+        color: 'red';
+        @content;
+    }
+}
+@mixin m($modifier) {
+    $selecor:&;
+    $currentSelector:"";
+    @each $unit in $modifier{
+        $currentSelector:#{$currentSelector+'item'+"--"+$unit+","};
+    }
+    @at-root{
+        #{$currentSelector}{
+            @content;
+        }
+    }
+}

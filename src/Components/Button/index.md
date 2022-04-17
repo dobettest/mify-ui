@@ -2,10 +2,10 @@
 nav:
   title: Components
   path: /components
-  order: 0
+  order: 1
 group:
   path: /common
-  title: 通用
+  title: common
 title: Button 按钮
 ---
 # Button 按钮
@@ -53,5 +53,5 @@ import { Button } from 'mify-ui';
 
 export default () => <Button>测试</Button>;
 ```
-
+</div>
 <API></API>
