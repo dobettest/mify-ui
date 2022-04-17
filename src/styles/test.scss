@@ -1,0 +1,12 @@
+@import "./mixin.scss";
+@import "./variables";
+@include b('btn'){
+    @include e('item'){
+        @include m('primary'){
+            color:$colorPrimary;
+        }
+        @include m("danger,primary,warning"){
+            color:$colorDanger;
+        }
+    }
+}
