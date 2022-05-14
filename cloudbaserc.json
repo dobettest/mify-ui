@@ -1,5 +1,6 @@
 {
   "envId": "{{envId}}",
+  "region":"ap-guangzhou",
   "framework": {
     "plugins": {
       "client": {
