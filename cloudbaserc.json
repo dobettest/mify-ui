@@ -2,6 +2,7 @@
   "envId": "{{envId}}",
   "region":"ap-guangzhou",
   "framework": {
+    "name":"mify-ui",
     "plugins": {
       "client": {
         "use": "@cloudbase/framework-plugin-website",
