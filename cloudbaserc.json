@@ -9,7 +9,7 @@
           "buildCommand": "npm run docs:build",
           "outputPath": "docs-dist",
           "cloudPath": "/",
-          "ignore": [".git", ".github", "node_modules", "cloudbaserc.js"]
+          "ignore": [".git", ".github", "node_modules", "cloudbaserc.json"]
         }
       }
     }
