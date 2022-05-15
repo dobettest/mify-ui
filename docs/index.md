@@ -12,9 +12,8 @@ features:
   - icon: https://gw.alipayobjects.com/zos/bmw-prod/d60657df-0822-4631-9d7c-e7a869c2f21c/k79dmz3q_w126_h126.png
     title: Benefit to use
     desc: Cutting-edge technology and standardized code design help developers become more efficient and focus all their attention on business logic
-  - icon: /assets/feature3.png
+  - icon: /assets/images/feature3.png
     title: Complete design
     desc: Complete design solutions and enterprise-level copywriting themes help teams reduce design costs and focus all attention on business logic
 footer: Open-source MIT Licensed | Copyright © 2020<br />Powered by [dumi](https://d.umijs.org)
 ---
-

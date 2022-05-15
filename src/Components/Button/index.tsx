@@ -1,41 +1,57 @@
-import React, { ReactNode, FC, ButtonHTMLAttributes, LinkHTMLAttributes } from "react";
-import classnames from "classnames"
-export interface BaseButtonProps {
-    /**设置按钮大小 */
-    size?: 'large' | 'middle' | 'small',
-    /**设置按钮类型 */
-    btnType?: 'primary' | 'default' | 'danger' | 'link',
-    /**按钮失效状态 */
-    disabled?: boolean,
-    /**按钮额外样式 */
-    className?: string,
-    children: ReactNode,
-    /**点击跳转的地址，指定此属性 button 的行为和 a 链接一致 */
-    href?: string
+import React, { FC, ButtonHTMLAttributes, AnchorHTMLAttributes } from 'react';
+import classNames from 'classnames';
+
+export type ButtonSize = 'lg' | 'sm';
+export type ButtonType = 'primary' | 'default' | 'danger' | 'link';
+
+interface BaseButtonProps {
+  className?: string;
+  /**设置 Button 的禁用 */
+  disabled?: boolean;
+  /**设置 Button 的尺寸 */
+  size?: ButtonSize;
+  /**设置 Button 的类型 */
+  btnType?: ButtonType;
+  children: React.ReactNode;
+  href?: string;
 }
-type NativeButtonProps = BaseButtonProps & ButtonHTMLAttributes<HTMLButtonElement>
-type AnchorButtonProps = BaseButtonProps & LinkHTMLAttributes<HTMLAnchorElement>
-export type ButtonProps = Partial<NativeButtonProps & AnchorButtonProps>
-const Button: FC<ButtonProps> = props => {
-    const { size, btnType, disabled, className, children, href, ...resetProps } = props;
-    let classNames = classnames('button', className, {
-        [`btn-${btnType}`]: btnType,
-        [`btn-${size}`]: size,
-        disabled: (btnType === 'link') && disabled
-    })
-    if (btnType === 'link' && href) {
-        return <a href={href} {...resetProps} className={classNames}>
-            {children}
-        </a>
-    } else {
-        return <button disabled={disabled} className={classNames}>
-            {children}
-        </button>
-    }
-}
+type NativeButtonProps = BaseButtonProps & ButtonHTMLAttributes<HTMLElement>;
+type AnchorButtonProps = BaseButtonProps & AnchorHTMLAttributes<HTMLElement>;
+export type ButtonProps = Partial<NativeButtonProps & AnchorButtonProps>;
+/**
+ * 页面中最常用的的按钮元素，适合于完成特定的交互
+ * ### 引用方法
+ *
+ * ~~~js
+ * import { Button } from 'vikingship'
+ * ~~~
+ */
+export const Button: FC<ButtonProps> = (props) => {
+  const { btnType, className, disabled, size, children, href, ...restProps } = props;
+  // btn, btn-lg, btn-primary
+  const classes = classNames('btn', className, {
+    [`btn-${btnType}`]: btnType,
+    [`btn-${size}`]: size,
+    disabled: btnType === 'link' && disabled,
+  });
+  if (btnType === 'link' && href) {
+    return (
+      <a className={classes} href={href} {...restProps}>
+        {children}
+      </a>
+    );
+  } else {
+    return (
+      <button className={classes} disabled={disabled} {...restProps}>
+        {children}
+      </button>
+    );
+  }
+};
+
 Button.defaultProps = {
-    disabled: false,
-    size: 'middle',
-    btnType: 'default'
-}
+  disabled: false,
+  btnType: 'default',
+};
+
 export default Button;

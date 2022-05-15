@@ -6,10 +6,10 @@ nav:
 group:
   path: /common
   title: common
-title: Button
+title: Icon
 ---
 
-# Button 按钮
+# Icon 按钮
 
 按钮用于开始一个即时操作
 

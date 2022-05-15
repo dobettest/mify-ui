@@ -6,7 +6,7 @@ nav:
 group:
   path: /common
   title: common
-title: Button
+title: Input
 ---
 
 # Button 按钮

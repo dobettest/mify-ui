@@ -6,7 +6,7 @@ nav:
 group:
   path: /common
   title: common
-title: Button
+title: Progress
 ---
 
 # Button 按钮

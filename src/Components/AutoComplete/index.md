@@ -6,10 +6,10 @@ nav:
 group:
   path: /common
   title: common
-title: Button
+title: AutoComplete
 ---
 
-# Button 按钮
+# AutoComplete 自动完成
 
 按钮用于开始一个即时操作
 

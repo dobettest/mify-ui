@@ -1,10 +1,10 @@
 {
   "envId": "{{envId}}",
-  "region":"ap-guangzhou",
-  "version":"2.0",
+  "region": "ap-guangzhou",
+  "version": "2.0",
   "$schema": "https://framework-1258016615.tcloudbaseapp.com/schema/latest.json",
   "framework": {
-    "name":"mify-ui",
+    "name": "mify-ui",
     "plugins": {
       "client": {
         "use": "@cloudbase/framework-plugin-website",
@@ -12,7 +12,7 @@
           "installCommand": "npm install --prefer-offline --no-audit --progress=false",
           "buildCommand": "npm run docs:build",
           "outputPath": "docs-dist",
-          "cloudPath": "/vuepress",
+          "cloudPath": "/mify-ui",
           "ignore": [".git", ".github", "node_modules", "cloudbaserc.json"]
         }
       }

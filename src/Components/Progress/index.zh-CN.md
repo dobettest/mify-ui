@@ -1,12 +1,12 @@
 ---
 nav:
-  title: Components
+  title: 组件
   path: /components
   order: 1
 group:
   path: /common
-  title: common
-title: Button
+  title: 通用
+title: 进度条
 ---
 
 # Button 按钮
